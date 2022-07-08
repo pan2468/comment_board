@@ -14,6 +14,7 @@
 + QueryDsl
 + Gradle
 + H2 Database
++ MySQL
 
 ### 📌 ERD 설계
 미작성
