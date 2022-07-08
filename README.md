@@ -9,8 +9,7 @@
 ### 🛠 사용 기술(기술스택)
 #### Back-End
 + Java 8
-+ Spring MVC
-+ SpringBoot
++ SpringBoot 2.7.1
 + SpringSecurity
 + QueryDsl
 + Gradle
