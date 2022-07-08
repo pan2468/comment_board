@@ -15,6 +15,7 @@
 + Gradle
 + H2 Database
 + MySQL
++ TDD
 
 ### 📌 ERD 설계
 미작성
