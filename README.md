@@ -11,7 +11,7 @@
 + Java 8
 + SpringBoot 2.7.1
 + SpringSecurity
-+ QueryD
++ QueryDSL
 + Gradle
 + H2 Database
 + MySQL
