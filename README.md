@@ -8,7 +8,12 @@
 
 ### 🛠 사용 기술(기술스택)
 #### Back-End
-+ 
++ Java 8
++ Spring MVC
++ SpringBoot
++ SpringSecurity
++ Gradle
++ H2 Database
 
 ### 📌 ERD 설계
 미작성
