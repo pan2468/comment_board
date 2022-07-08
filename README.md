@@ -12,6 +12,7 @@
 + Spring MVC
 + SpringBoot
 + SpringSecurity
++ QueryDsl
 + Gradle
 + H2 Database
 
