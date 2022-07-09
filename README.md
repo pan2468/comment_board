@@ -33,7 +33,7 @@
   ### 해결방법
 - InteliJ 오류
 - Intelij > Ctrl+Alt+S > Setting > BuildTools > Gradle > Run tests using : InteliJ IDEA  
-<img src="https://user-images.githubusercontent.com/58936137/178106276-a84c7c23-7b77-4cdd-9ccb-5836f9e0abba.png" width="300px" height="300px">
+<img src="https://user-images.githubusercontent.com/58936137/178106276-a84c7c23-7b77-4cdd-9ccb-5836f9e0abba.png" width="600px" height="500px">
  
 </div>
 </details>
