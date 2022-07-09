@@ -25,7 +25,6 @@
 <details>
 <summary>테스트 코드 오류</summary>
 <div markdown="1">
-### 오류 발생
 - Execution failed for task ':test'.
 
 ### 해결 과정
