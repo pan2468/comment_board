@@ -22,6 +22,9 @@
 ### 📌 핵심기능
 미작성
 ### 📌 핵심트러블슈팅 경험
+
+
+### 트러블슈팅 경험
 <details>
 <summary>테스트 코드 오류</summary>
 <div markdown="1">
