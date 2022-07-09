@@ -26,7 +26,7 @@
 <summary>테스트 코드 오류</summary>
 <div markdown="1">
 ### 오류 발생
-+ Execution failed for task ':test'.
+- Execution failed for task ':test'.
 
 ### 해결 과정
 - Webpack-dev-server 버전을 3.0.0으로 다운그레이드로 해결
