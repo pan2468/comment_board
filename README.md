@@ -22,6 +22,17 @@
 ### 📌 핵심기능
 미작성
 ### 📌 핵심트러블슈팅 경험
-미작성
+<details>
+<summary>테스트 코드 오류</summary>
+<div markdown="1">
+### 오류 발생
+- Execution failed for task ':test'.
+
+### 해결 과정
+- Webpack-dev-server 버전을 3.0.0으로 다운그레이드로 해결
+- `$ npm install —save-dev webpack-dev-server@3.0.0`
+
+</div>
+</details>
 ### 👉 회고/느낀점
 미작성
