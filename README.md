@@ -25,11 +25,10 @@
 <details>
 <summary>테스트 코드 오류</summary>
 <div markdown="1">
-  <h2><strong>오류 발생</strong></h2>
-  </br>
+  <strong>오류 발생</strong></br>
 - Execution failed for task ':test'.
 
-### 해결 과정
+  <strong>해결과정</strong></br>
 - Webpack-dev-server 버전을 3.0.0으로 다운그레이드로 해결
 - `$ npm install —save-dev webpack-dev-server@3.0.0`
 
