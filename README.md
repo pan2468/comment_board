@@ -26,7 +26,7 @@
 
 ### 📌 트러블슈팅 경험
 <details>
-<summary>테스트 코드 오류</summary>
+<summary>Hello Controller 테스트 코드 오류</summary>
 <div markdown="1">
 - Execution failed for task ':test'.
   
