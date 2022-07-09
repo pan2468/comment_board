@@ -25,7 +25,8 @@
 <details>
 <summary>테스트 코드 오류</summary>
 <div markdown="1">
-  <strong>오류 발생</strong>
+  <h2><strong>오류 발생</strong></h2>
+  </br>
 - Execution failed for task ':test'.
 
 ### 해결 과정
