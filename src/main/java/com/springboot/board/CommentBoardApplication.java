@@ -1,4 +1,4 @@
-package com.board.comment_board;
+package com.springboot.board;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
