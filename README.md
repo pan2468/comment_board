@@ -27,7 +27,6 @@
 <div markdown="1">
   <strong>오류 발생</strong></br>
 - Execution failed for task ':test'.
-</br>
   <strong>해결과정</strong></br>
 - Webpack-dev-server 버전을 3.0.0으로 다운그레이드로 해결
 - `$ npm install —save-dev webpack-dev-server@3.0.0`
