@@ -27,9 +27,9 @@
 <div markdown="1">
 - Execution failed for task ':test'.
   
-  ### 해결과정
-- Webpack-dev-server 버전을 3.0.0으로 다운그레이드로 해결
-- `$ npm install —save-dev webpack-dev-server@3.0.0`
+  ### 해결방법
+- InteliJ 오류
+- Intelij > Ctrl+Alt+S > Setting > BuildTools > Gradle > Run tests using : InteliJ IDEA  
 
 </div>
 </details>
