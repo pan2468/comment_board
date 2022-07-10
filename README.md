@@ -18,11 +18,11 @@
 + TDD
 
 ### 📌 ERD 설계
-미작성
+미완성
 ### 📌 핵심기능
-미작성
+미완성
 ### 📌 핵심트러블슈팅 경험
-미작성
+미완성
 
 ### 📌 트러블슈팅 경험
 <details>
@@ -42,6 +42,13 @@
 <div markdown="1">
 - java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0 </br>
 - org.springframework.web.client.RestClientException:
+  
+### 해결방법
++ 원인: Posts_수정하기() 메소드 구현부 테스트 코드 오류
+
+<details>
+<summary>기존 코드</summary>
+<div markdown="1">
   
 ~~~
     @Test
@@ -78,9 +85,45 @@
 
     }
 ~~~
-  
 </div>
 </details>
 
-### 👉 회고/느낀점
-미작성
+<details>
+<summary>개선 코드</summary>
+<div markdown="1">
+  
+~~~
+    @Test
+    public void Posts_수정하기() throws Exception{
+        //given
+        String title = "제목";
+        String content = "내용";
+        String email = "이메일";
+
+        postsRepository.save(Posts.builder()
+                .title(title)
+                .content(content)
+                .email(email)
+                .build());
+        //when
+        List<Posts> postsList = postsRepository.findAll();
+        List<Posts> posts = postsRepository.findAllById(postsList.get(0).getId());
+
+        Posts modify = new Posts("제목 수정","내용 수정","이메일 수정");
+        PostsUpdateRequestDto postsUpdate = new PostsUpdateRequestDto(modify.getTitle(), modify.getContent());
+        postsRepository.save(Posts.builder()
+                .title(postsUpdate.getTitle())
+                .content(postsUpdate.getContent())
+                .build());
+        //then
+        List<Posts> postsmodify = postsRepository.findAllById(postsList.get(0).getId());
+        assertThat(postsmodify.get(0).getTitle()).isEqualTo(title);
+        assertThat(postsmodify.get(0).getContent()).isEqualTo(content);
+
+    }
+~~~
+</div>
+</details>
+
+
+
