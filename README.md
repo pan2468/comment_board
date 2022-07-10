@@ -40,7 +40,7 @@
 <details>
 <summary>게시글 수정하기 테스트 오류</summary>
 <div markdown="1">
-- java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+- java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0 </br>
 - org.springframework.web.client.RestClientException:
   
 ~~~
