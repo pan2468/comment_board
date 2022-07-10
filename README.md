@@ -87,8 +87,11 @@
 ~~~
 </div>
 </details>
-<details>
 
+<details>
+<summary>개선 코드</summary>
+<div markdown="1">
+  
 ~~~
     @Test
     public void Posts_수정하기() throws Exception{
