@@ -84,7 +84,7 @@ public class PostsApiControllerTest {
     }
 
     @Test
-    public void Posts_수정하기()throws Exception{
+    public void Posts_수정하기() throws Exception{
         //given
         String title = "제목";
         String content = "내용";
@@ -113,7 +113,6 @@ public class PostsApiControllerTest {
     }
 
     @Test
-
     public void Posts_상세조회()throws Exception{
         //given
         String title = "제목 상세";
@@ -135,4 +134,6 @@ public class PostsApiControllerTest {
         assertThat(posts.get(0).getContent()).isEqualTo(content);
         assertThat(posts.get(0).getEmail()).isEqualTo(email);
     }
+
+
 }
