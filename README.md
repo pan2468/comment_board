@@ -42,8 +42,9 @@
 <div markdown="1">
 - java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0 </br>
 - org.springframework.web.client.RestClientException:
+  
 ### 해결방법
-- 원인: Posts_수정하기() 메소드 구현부 테스트 코드 오류
++ 원인: Posts_수정하기() 메소드 구현부 테스트 코드 오류
 
 <details>
 <summary>기존 코드</summary>
