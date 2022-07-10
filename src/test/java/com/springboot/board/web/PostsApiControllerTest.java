@@ -3,6 +3,7 @@ package com.springboot.board.web;
 import com.springboot.board.domain.posts.Posts;
 import com.springboot.board.domain.posts.PostsRepository;
 import com.springboot.board.web.dto.PostsSaveRequestDto;
+import com.springboot.board.web.dto.PostsUpdateRequestDto;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -58,5 +59,31 @@ public class PostsApiControllerTest {
         assertThat(all.get(0).getTitle()).isEqualTo(title);
         assertThat(all.get(0).getContent()).isEqualTo(content);
 
+    }
+
+    @Test
+    public void Posts_수정하기(){
+        //given
+        String title = "제목 수정하기";
+        String content = "내용 수정하기";
+
+        PostsUpdateRequestDto requestUpdateDto = PostsUpdateRequestDto.builder()
+                .title(title)
+                .content(content)
+                .build();
+
+        String url = "http://localhost:" + port + "/api/v1/posts";
+
+
+        //when
+        ResponseEntity<Long> responseEntity = restTemplate.postForEntity(url, requestUpdateDto, Long.class);
+
+        //then
+        assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(responseEntity.getBody()).isGreaterThan(0L);
+
+        List<Posts> all = postsRepository.findAll();
+        assertThat(all.get(0).getTitle()).isEqualTo(title);
+        assertThat(all.get(0).getContent()).isEqualTo(content);
     }
 }

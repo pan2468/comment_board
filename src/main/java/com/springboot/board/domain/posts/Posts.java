@@ -30,4 +30,9 @@ public class Posts {
         this.email = email;
     }
 
+    public void update(String title, String content){
+        this.title = title;
+        this.content = content;
+    }
+
 }
