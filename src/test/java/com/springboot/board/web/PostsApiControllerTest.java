@@ -3,6 +3,7 @@ package com.springboot.board.web;
 import com.springboot.board.domain.posts.Posts;
 import com.springboot.board.domain.posts.PostsRepository;
 import com.springboot.board.web.dto.PostsSaveRequestDto;
+import com.springboot.board.web.dto.PostsUpdateRequestDto;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -85,11 +86,29 @@ public class PostsApiControllerTest {
     @Test
     public void Posts_수정하기()throws Exception{
         //given
-        Posts posts = new Posts();
-        List<Posts> postsUpdate = postsRepository.findAllById(posts.getId());
+        String title = "제목";
+        String content = "내용";
+        String email = "이메일";
 
+        postsRepository.save(Posts.builder()
+                .title(title)
+                .content(content)
+                .email(email)
+                .build());
+        //when
+        List<Posts> postsList = postsRepository.findAll();
+        List<Posts> posts = postsRepository.findAllById(postsList.get(0).getId());
 
-
+        Posts modify = new Posts("제목 수정","내용 수정","이메일 수정");
+        PostsUpdateRequestDto postsUpdate = new PostsUpdateRequestDto(modify.getTitle(), modify.getContent());
+        postsRepository.save(Posts.builder()
+                .title(postsUpdate.getTitle())
+                .content(postsUpdate.getContent())
+                .build());
+        //then
+        List<Posts> postsmodify = postsRepository.findAllById(postsList.get(0).getId());
+        assertThat(postsmodify.get(0).getTitle()).isEqualTo(title);
+        assertThat(postsmodify.get(0).getContent()).isEqualTo(content);
 
     }
 
