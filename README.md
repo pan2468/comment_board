@@ -42,6 +42,7 @@
 <div markdown="1">
 - java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
 - org.springframework.web.client.RestClientException:
+  
 ~~~
     @Test
     public void Posts_수정하기(){
