@@ -95,15 +95,25 @@ public class PostsApiControllerTest {
 
     @Test
 
-    public void Posts_상세(){
+    public void Posts_상세조회()throws Exception{
         //given
+        String title = "제목 상세";
+        String content = "내용 상세";
+        String email = "이메일 상세";
 
-//        Order savedOrder = orderRepository.findById(order.getId())
-//                .orElseThrow(EntityNotFoundException::new);
-
+        postsRepository.save(Posts.builder()
+                .title(title)
+                .content(content)
+                .email(email)
+                .build());
 
         //when
+        List<Posts> postsList = postsRepository.findAll();
 
         //then
+        List<Posts> posts = postsRepository.findAllById(postsList.get(0).getId());
+        assertThat(posts.get(0).getTitle()).isEqualTo(title);
+        assertThat(posts.get(0).getContent()).isEqualTo(content);
+        assertThat(posts.get(0).getEmail()).isEqualTo(email);
     }
 }
