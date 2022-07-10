@@ -49,6 +49,7 @@
 <details>
 <summary>기존 코드</summary>
 <div markdown="1">
+  
 ~~~
     @Test
     public void Posts_수정하기(){
