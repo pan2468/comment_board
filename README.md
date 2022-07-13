@@ -20,7 +20,60 @@
 ### 📌 ERD 설계
 미완성
 ### 📌 핵심기능
-미완성
+<details>
+<summary>JPA Auditing 날짜 자동화</summary>
+<div markdown="1">
+  
+~~~
+import lombok.Getter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import javax.persistence.EntityListeners;
+import javax.persistence.MappedSuperclass;
+import java.time.LocalDateTime;
+
+
+@Getter
+@MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
+public abstract class BaseTimeEntity {
+
+    @CreatedDate
+    private LocalDateTime createData;
+
+    @LastModifiedDate
+    private LocalDateTime modifiedDate;
+
+
+}
+~~~
+
+~~~
+    @Test
+    public void BaseTimeEntity_등록(){
+        //given
+        LocalDateTime now = LocalDateTime.of(2022,7,13,5,46,0);
+        postsRepository.save(Posts.builder()
+                .title("title")
+                .content("content")
+                .email("email")
+                .build());
+        //when
+        List<Posts> postsList = postsRepository.findAll();
+
+        //then
+        Posts posts = postsList.get(0);
+        System.out.println(">>>>>>> createDate=" + posts.getCreateData()+", modifiedDate="+posts.getModifiedDate());
+
+        assertThat(posts.getCreateData()).isAfter(now);
+        assertThat(posts.getModifiedDate()).isAfter(now);
+    }
+~~~
+
+</div>
+</details>
 ### 📌 핵심트러블슈팅 경험
 미완성
 
