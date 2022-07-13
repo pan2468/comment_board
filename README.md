@@ -74,6 +74,7 @@ public abstract class BaseTimeEntity {
 
 </div>
 </details>
+  
 ### 📌 핵심트러블슈팅 경험
 미완성
 
