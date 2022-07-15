@@ -91,6 +91,53 @@ public abstract class BaseTimeEntity {
  
 </div>
 </details>
+  
+<details>
+<summary>게시글 조회하기 오류</summary>
+<div markdown="1">
+- Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'postsApiController' method <br>
+- Execution failed for task ':CommentBoardApplication.main()'.
+
+### 해결방법
++ 원인: @GetMapping("/") 어노테이션 중복경로 오류 
++ PostsApiController 클래스 Index 메소드 주석 처리   
+<details>
+<summary>기존 코드</summary>
+<div markdown="1">
+
+  IndexController.java
+  ~~~
+      @GetMapping("/")
+    public String index(Model model){
+
+        model.addAttribute("posts", postsService.findAllDesc());
+        return "index";
+    }
+  ~~~
+  
+</div>
+</details>  
+
+<details>
+<summary>개선 코드</summary>
+<div markdown="1">
+
+PostsApiController.java
+~~~
+//    @GetMapping("/")
+//    public String index(Model model){
+//        model.addAttribute("posts",postsService.findAllDesc());
+//        return "index";
+//    }
+~~~
+  
+</div>
+</details>  
+  
+  
+</div>
+</details>  
+  
 <details>
 <summary>게시글 수정하기 테스트 오류</summary>
 <div markdown="1">
@@ -178,6 +225,9 @@ public abstract class BaseTimeEntity {
 ~~~
 </div>
 </details>
+
+
+
 
 
 
