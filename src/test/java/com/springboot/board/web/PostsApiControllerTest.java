@@ -99,7 +99,7 @@ public class PostsApiControllerTest {
         List<Posts> postsList = postsRepository.findAll();
         List<Posts> posts = postsRepository.findAllById(postsList.get(0).getId());
 
-        Posts modify = new Posts("제목 수정","내용 수정","이메일 수정");
+        Posts modify = new Posts("제목 수정","내용 수정","작성자 수정","이메일 수정");
         PostsUpdateRequestDto postsUpdate = new PostsUpdateRequestDto(modify.getTitle(), modify.getContent());
         postsRepository.save(Posts.builder()
                 .title(postsUpdate.getTitle())

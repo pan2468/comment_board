@@ -2,12 +2,16 @@ package com.springboot.board.service.posts;
 
 import com.springboot.board.domain.posts.Posts;
 import com.springboot.board.domain.posts.PostsRepository;
+import com.springboot.board.web.dto.PostsListReponseDto;
 import com.springboot.board.web.dto.PostsResponseDto;
 import com.springboot.board.web.dto.PostsSaveRequestDto;
 import com.springboot.board.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -33,5 +37,12 @@ public class PostsService {
                 .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
 
         return new PostsResponseDto(entity);
+    }
+
+    @Transactional(readOnly = true)
+    public List<PostsListReponseDto> findAllDesc(){
+        return postsRepository.findAllDesc().stream()
+                .map(PostsListReponseDto::new)
+                .collect(Collectors.toList());
     }
 }
