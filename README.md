@@ -179,5 +179,17 @@ public abstract class BaseTimeEntity {
 </div>
 </details>
 
+<details>
+<summary>게시글 조회하기 오류</summary>
+<div markdown="1">
+- Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'postsApiController' method 
+- Execution failed for task ':CommentBoardApplication.main()'.
+
+### 해결방법
++ 원인:
+</div>
+</details>
+
+
 
 
