@@ -104,7 +104,7 @@ public abstract class BaseTimeEntity {
 <details>
 <summary>기존 코드</summary>
 <div markdown="1">
-  <br>
+
   IndexController.java
   ~~~
       @GetMapping("/")
@@ -122,7 +122,6 @@ public abstract class BaseTimeEntity {
 <summary>개선 코드</summary>
 <div markdown="1">
 
- <br>
 PostsApiController.java
 ~~~
 //    @GetMapping("/")
