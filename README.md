@@ -214,6 +214,18 @@ public class PostsResponseDto {
   
 </div>
 </details>  
+
+<details>
+<summary>게시글 수정버튼 클릭 오류</summary>
+<div markdown="1">
+- java.lang.IllegalArgumentException: 해당 게시글이 없습니다. id=1
+
+### 해결방법
++ 원인: 
+
+</div>
+</details>  
+
   
 <details>
 <summary>게시글 수정하기 테스트 오류</summary>
