@@ -222,7 +222,7 @@ public class PostsResponseDto {
 
 ### 해결방법
 + 원인: posts-update.mustache 오류
-+ posts-update.mustache 에서 맨 밑에 하단에 {{>layout/footer}} 코드 추가 후 index.j 경로 통해서 해당 Id 값 보내 개선  
++ posts-update.mustache 에서 맨 밑에 하단에 {{>layout/footer}} 코드 추가 후 index.js 경로 통해서 해당 Id 값 보내 개선  
 
 
 <details>
