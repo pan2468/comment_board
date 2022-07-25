@@ -144,7 +144,72 @@ PostsApiController.java
 - com.samskivert.mustache.MustacheException$Context: No method or field with name 'post.author' on line 21
 
 ### 해결방법
-+ 원인: 
++ 원인: PostsResponseDto.java 에서 author 멤버 변수선언과 생성자 선언을 안하여 오류
+
+
+<details>
+<summary>기존 코드</summary>
+<div markdown="1">
+
+~~~
+
+import com.springboot.board.domain.posts.Posts;
+import lombok.Getter;
+
+@Getter
+public class PostsResponseDto {
+
+    private Long id;
+    private String title;
+    private String content;
+    private String email;
+
+    public PostsResponseDto(Posts entity){
+        this.id = entity.getId();
+        this.title = entity.getTitle();
+        this.content = entity.getContent();
+        this.email = entity.getEmail();
+    }
+
+}
+~~~
+
+</div>
+</details>  
+
+<details>
+<summary>개선 코드</summary>
+<div markdown="1">
+
+~~~
+
+
+import com.springboot.board.domain.posts.Posts;
+import lombok.Getter;
+
+@Getter
+public class PostsResponseDto {
+
+    private Long id;
+    private String title;
+    private String content;
+    private String author; // 멤버변수 선언 후 개선
+    private String email;
+
+    public PostsResponseDto(Posts entity){
+        this.id = entity.getId();
+        this.title = entity.getTitle();
+        this.content = entity.getContent();
+        this.author = entity.getAuthor(); //생성자 추가하여 개선
+        this.email = entity.getEmail();
+    }
+
+}
+
+~~~
+
+</div>
+</details>  
 
   
 </div>
