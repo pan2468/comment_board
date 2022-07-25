@@ -1,7 +1,8 @@
 ## 📌 CommentBoard
 
 ### 👉 프로젝트 과정
-+ 개인 프로젝트 설명: <a href="https://pan2468.tistory.com/category/%EA%B0%9C%EC%9D%B8%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8">개인 프로젝트 블로그</a>
++ 개인 프로젝트 설명: <a href="https://pan2468.tistory.com/category/Toy%20Project/%EB%8C%93%EA%B8%80%20%EA%B2%8C%EC%8B%9C%ED%8C%90">개인 프로젝트 블로그</a>
+
 ### 👉 제작기간 / 참여인원
 + 제작기간: 2022-07-08 ~ 진행
 + 참여인원: 개인 프로젝트
@@ -125,8 +126,7 @@ public abstract class BaseTimeEntity {
 PostsApiController.java
 ~~~
 //    @GetMapping("/")
-//    public String index(Model model){
-//        model.addAttribute("posts",postsService.findAllDesc());
+//    public String index(){
 //        return "index";
 //    }
 ~~~
@@ -225,6 +225,8 @@ PostsApiController.java
 ~~~
 </div>
 </details>
+
+  
 
 
 
