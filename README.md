@@ -308,7 +308,7 @@ public class PostsResponseDto {
     </div>
 </div>
 
-{{>layout/footer}}
+{{>layout/footer}} //코드 추가 후 개선
 ~~~
   
   
