@@ -221,8 +221,102 @@ public class PostsResponseDto {
 - java.lang.IllegalArgumentException: 해당 게시글이 없습니다. id=1
 
 ### 해결방법
-+ 원인: 
++ 원인: posts-update.mustache 오류
++ posts-update.mustache 에서 맨 밑에 하단에 {{>layout/footer}} 코드 추가 후 index.jS 경로 통해서 해당 Id 값 보내 개선  
 
+
+<details>
+<summary>기존 코드</summary>
+<div markdown="1">
+
+~~~
+{{>layout/header}}
+
+<h3>게시글 수정하기</h3>
+
+<div class="container">
+    <div class="col-md-12">
+        <div class="col-md-4">
+            <form>
+                <div class="form-group">
+                    <label for="id">글 번호</label>
+                    <input type="text" class="form-control" id="id" value="{{post.id}}" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label for="title">제목</label>
+                    <input type="text" class="form-control" id="title" value="{{post.title}}">
+                </div>
+                
+                <div class="form-group">
+                    <label for="author">작성자</label>
+                    <input type="text" class="form-control" id="author" value="{{post.author}}" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="content">내용</label>
+                    <textarea class="form-control" id="content">{{post.content}}</textarea>
+                </div>
+            </form>
+            <a href="/" role="button" class="btn btn-secondary">취소</a>
+            <button type="button" class="btn btn-primary" id="btn-update">수정</button>
+        </div>
+    </div>
+</div>
+
+~~~
+
+</div>
+</details>  
+  
+<details>
+<summary>개선 코드</summary>
+<div markdown="1">
+
+~~~
+{{>layout/header}}
+
+<h3>게시글 수정하기</h3>
+
+<div class="container">
+    <div class="col-md-12">
+        <div class="col-md-4">
+            <form>
+                <div class="form-group">
+                    <label for="id">글 번호</label>
+                    <input type="text" class="form-control" id="id" value="{{post.id}}" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label for="title">제목</label>
+                    <input type="text" class="form-control" id="title" value="{{post.title}}">
+                </div>
+                
+                <div class="form-group">
+                    <label for="author">작성자</label>
+                    <input type="text" class="form-control" id="author" value="{{post.author}}" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="content">내용</label>
+                    <textarea class="form-control" id="content">{{post.content}}</textarea>
+                </div>
+            </form>
+            <a href="/" role="button" class="btn btn-secondary">취소</a>
+            <button type="button" class="btn btn-primary" id="btn-update">수정</button>
+        </div>
+    </div>
+</div>
+
+{{>layout/footer}}
+~~~
+  
+  
+</div>
+</details>  
+  
+  
+  
 </div>
 </details>  
 
