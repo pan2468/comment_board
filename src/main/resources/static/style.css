@@ -3,6 +3,22 @@
     margin-top: 150px;
     margin: auto;
 }
-h5{
+
+.blue{
+    background-color: #3498DB;
+}
+
+th{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.btn{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: right;
+}
+
+h4{
+    
     font-weight: bold;
 }
