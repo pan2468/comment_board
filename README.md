@@ -137,6 +137,18 @@ PostsApiController.java
   
 </div>
 </details>  
+
+<details>
+<summary>게시글 수정하기 오류</summary>
+<div markdown="1">
+- com.samskivert.mustache.MustacheException$Context: No method or field with name 'post.author' on line 21
+
+### 해결방법
++ 원인: 
+
+  
+</div>
+</details>  
   
 <details>
 <summary>게시글 수정하기 테스트 오류</summary>
