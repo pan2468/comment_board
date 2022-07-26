@@ -411,7 +411,7 @@ public class PostsResponseDto {
 </details> 
 
 
-### 👉 프로젝트 
+### 👉 프로젝트 설명
 + 개인 프로젝트 설명: <a href="https://pan2468.tistory.com/category/Toy%20Project/%EB%8C%93%EA%B8%80%20%EA%B2%8C%EC%8B%9C%ED%8C%90">개인 프로젝트 블로그</a>
   
 
