@@ -1,7 +1,7 @@
 ## 📌 CommentBoard
 
 ### 👉 프로젝트 목적 
-<strong>스프링 부트와 AWS로 혼자 구현하는 웹서비스 - 이동욱 저자님</strong> 책을 읽고 개인 프로젝트를 실습을 해보려고합니다. </br>
+<strong><a href="http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788965402602">스프링 부트와 AWS로 혼자 구현하는 웹서비스 - 이동욱 저자님</a></strong> 책을 읽고 개인 프로젝트를 실습을 해보려고합니다. </br>
 주제는 댓글 게시판 만들기 입니다. 단순한 CRUD 게시판보다는 사용자들이 요구사항이 무엇인지 알기 위해서 댓글기능을 사용하려고 합니다. 
 
 ### 👉 기능설명
