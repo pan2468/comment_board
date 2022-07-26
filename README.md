@@ -432,7 +432,7 @@ public class PostsResponseDto {
 <summary>기존 코드</summary>
 <div markdown="1">
 
-- PostsService.java
+##### PostsService.java
 ~~~
 
 public Long update(Long id, PostsUpdateRequestDto requestDto) {
@@ -452,6 +452,7 @@ public Long update(Long id, PostsUpdateRequestDto requestDto) {
 <summary>개선 코드</summary>
 <div markdown="1">
 
+##### PostsService.java
 ~~~
 
 @Transactional // 트랙잭션 선언하여 PUT 적용할 수 있게 개선
