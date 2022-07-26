@@ -1,4 +1,4 @@
-## 📌 CommentBoard
+## 📌 Comment_Board
 
 ### 👉 프로젝트 목적 
 <strong><a href="http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788965402602">스프링 부트와 AWS로 혼자 구현하는 웹서비스 - 이동욱 저자님</a></strong> 책을 읽고 개인 프로젝트를 실습을 해보려고합니다. </br>
