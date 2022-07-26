@@ -403,9 +403,12 @@ public class PostsResponseDto {
 
     }
 ~~~
+  
 </div>
 </details>
-
+  
+</div>
+</details> 
 
 
 ### 👉 프로젝트 과정
