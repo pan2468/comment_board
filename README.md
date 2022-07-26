@@ -1,7 +1,13 @@
-## 📌 CommentBoard
+## 📌 Comment_Board
 
-### 👉 프로젝트 과정
-+ 개인 프로젝트 설명: <a href="https://pan2468.tistory.com/category/Toy%20Project/%EB%8C%93%EA%B8%80%20%EA%B2%8C%EC%8B%9C%ED%8C%90">개인 프로젝트 블로그</a>
+### 👉 프로젝트 목적 
+<strong><a href="http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788965402602">스프링 부트와 AWS로 혼자 구현하는 웹서비스 - 이동욱 저자님</a></strong> 책을 읽고 개인 프로젝트를 실습을 해보려고합니다. </br>
+주제는 댓글 게시판 만들기 입니다. 단순한 CRUD 게시판보다는 사용자들이 요구사항이 무엇인지 알기 위해서 댓글기능을 사용하려고 합니다. 
+
+### 👉 기능설명
++ JpaRepository 인터페이스 이용하여 CRUD 게시판 구현하기
++ SpringSecurity 로그인 API 인증구현하기 (ex 네이버, 구글)
++ 댓글 기능 구현하기
 
 ### 👉 제작기간 / 참여인원
 + 제작기간: 2022-07-08 ~ 진행
@@ -406,9 +412,69 @@ public class PostsResponseDto {
 
     }
 ~~~
+  
 </div>
 </details>
+  
+</div>
+</details> 
 
+<details>
+<summary>수정하기 'PUT' 안됨 </summary>
+<div markdown="1">
+ - 오류를 나지 않았지만, PUT 안되는 원인은 모르겠음
+ 
+ ### 해결 방법
++ 원인: Service 계층 update 메소드 위에 @Transactional 어노테이션 선언을 안하여 PUT 적용이 안됨 
+
+
+<details>
+<summary>기존 코드</summary>
+<div markdown="1">
+
+##### PostsService.java
+~~~
+
+public Long update(Long id, PostsUpdateRequestDto requestDto) {
+    Posts posts = postsRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
+    posts.update(requestDto.getTitle(), requestDto.getContent());
+
+     return id;
+}
+
+~~~
+
+</div>
+</details>  
+
+<details>
+<summary>개선 코드</summary>
+<div markdown="1">
+
+##### PostsService.java
+~~~
+
+@Transactional // 트랙잭션 선언하여 PUT 적용할 수 있게 개선
+public Long update(Long id, PostsUpdateRequestDto requestDto) {
+    Posts posts = postsRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
+    posts.update(requestDto.getTitle(), requestDto.getContent());
+
+     return id;
+}
+
+~~~
+
+</div>
+</details> 
+
+</div>
+</details>  
+
+
+### 👉 프로젝트 설명
++ 개인 프로젝트 설명: <a href="https://pan2468.tistory.com/category/Toy%20Project/%EB%8C%93%EA%B8%80%20%EA%B2%8C%EC%8B%9C%ED%8C%90">개인 프로젝트 블로그</a>
   
 
 
