@@ -419,6 +419,58 @@ public class PostsResponseDto {
 </div>
 </details> 
 
+<details>
+<summary>수정하기 'PUT' 안됨 </summary>
+<div markdown="1">
+ - 오류를 나지 않았지만, PUT 안되는 원인은 모르겠음
+ 
+ ### 해결 방법
++ 원인: Service 계층 update 메소드 위에 @Transactional 어노테이션 선언을 안하여 PUT 적용이 안됨 
+
+
+<details>
+<summary>기존 코드</summary>
+<div markdown="1">
+
+- PostsService.java
+~~~
+
+public Long update(Long id, PostsUpdateRequestDto requestDto) {
+    Posts posts = postsRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
+    posts.update(requestDto.getTitle(), requestDto.getContent());
+
+     return id;
+}
+
+~~~
+
+</div>
+</details>  
+
+<details>
+<summary>개선 코드</summary>
+<div markdown="1">
+
+~~~
+
+@Transactional // 트랙잭션 선언하여 PUT 적용할 수 있게 개선
+public Long update(Long id, PostsUpdateRequestDto requestDto) {
+    Posts posts = postsRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
+    posts.update(requestDto.getTitle(), requestDto.getContent());
+
+     return id;
+}
+
+~~~
+
+</div>
+</details> 
+
+</div>
+</details>  
+
 
 ### 👉 프로젝트 설명
 + 개인 프로젝트 설명: <a href="https://pan2468.tistory.com/category/Toy%20Project/%EB%8C%93%EA%B8%80%20%EA%B2%8C%EC%8B%9C%ED%8C%90">개인 프로젝트 블로그</a>
